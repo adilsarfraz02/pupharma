@@ -1,9 +1,9 @@
-import conn from "@/utils/db";
+import connectDB from "../../../../lib/mongodb";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
     try {
-        await conn();
+        await connectDB();
         console.log("✅ MongoDB Connected");
         return new Response("✅ MongoDB Connected",{ status: 200 });
     }
