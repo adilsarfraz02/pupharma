@@ -2,26 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+main{
+    @apply min-h-screen;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.navActivelink, .mblLinkActive{
+    background: rgba(135, 31, 232, 0.589) !important;
+    border-radius: 15px !important;
 }
+.navLink{
+    border-radius: 15px !important;
+    @apply px-3 py-2 shadow bg-zinc-500/20 backdrop-blur !important;
+}
+.navDropDown{
+    border-radius: 15px !important;
+    @apply hover:bg-purple-500/20 bg-purple-500/20 text-purple-500 text-medium  w-full p-3 ;
+}
+.navDropActive{
+    border-radius: 15px !important;
+    @apply text-medium hover:bg-gray-50/10 w-full p-3 ;
+}
+.mblLinkActive{
+    border-radius: 15px !important;
+    background: rgba(135, 31, 232, 0.589) !important;
+    @apply w-full;
+}
+.mblLink{
+    border-radius: 15px !important;
+    @apply py-3 px-2  ;
+}
+.btn-main{
+    @apply bg-gradient-to-tr transition from-purple-700 via-black/50 to-pink-500 
+}
+.btn-main:hover{
+    @apply bg-gradient-to-tl  from-purple-700 via-black/50 to-pink-500 
+}
+.herobtn{
+    animation: moveupdown 3s infinite both;
+    
+    @apply bg-black/50 mt-5 border-1 z-20 border-t-pink-500 border-l-purple-500 border-r-orange-500 border-b-violet-600 backdrop-blur-lg; 
+}
+@keyframes moveupdown {
+    50%{
+        transform: translateY(50px);
+    }
+}
+.bgDot{
+    background-image:  linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px black inset !important;
+}
+::-webkit-scrollbar{
+    @apply bg-transparent w-2;
+}
+::-webkit-scrollbar-thumb{
+    @apply bg-zinc-800  transition-all rounded-3xl border-2 border-pink-500;
+}
+::-webkit-scrollbar-track{
+    @apply  bg-transparent ;
+}
+::-webkit-scrollbar-thumb:hover{
+    @apply bg-zinc-900;
+}
+.dropcontent{
+    border-radius: 15px !important;
 }
